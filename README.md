@@ -12,6 +12,10 @@
 |------|--------|
 | ![购物车](./screenshots/cart.png) | ![登录](./screenshots/login.png) |
 
+| 个人中心 | 分类页面 |
+|------|--------|
+| ![个人中心](./screenshots/user.png) | ![分类页面](./screenshots/category.png) |
+
 > 💡 提示：所有截图均为实际运行效果
 
 ## ⚙️ 技术栈
