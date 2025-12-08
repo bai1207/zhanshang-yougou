@@ -56,7 +56,7 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/你的用户名/zhanshang-yougou.git
+git clone https://github.com/bai1207/zhanshang-yougou.git
 
 # 进入项目
 cd zhanshang-yougou
