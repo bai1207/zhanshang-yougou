@@ -207,105 +207,188 @@ export default {
 <style lang="less" scoped>
 .prodetail {
   padding-top: 46px;
+  background-color: #f5f5f5;
+
   ::v-deep .van-icon-arrow-left {
     color: #333;
   }
+
   img {
     display: block;
     width: 100%;
   }
+
   .custom-indicator {
     position: absolute;
-    right: 10px;
-    bottom: 10px;
-    padding: 5px 10px;
+    right: 12px;
+    bottom: 12px;
+    padding: 6px 12px;
     font-size: 12px;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
+    color: #fff;
+    backdrop-filter: blur(5px);
   }
+
   .desc {
     width: 100%;
     overflow: scroll;
+    background-color: #fff;
+    padding: 15px;
+
     ::v-deep img {
       display: block;
       width: 100%!important;
+      margin-bottom: 10px;
+      border-radius: 8px;
     }
   }
+
   .info {
-    padding: 10px;
+    padding: 15px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
+
   .title {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+
+    .price {
+      display: flex;
+      align-items: baseline;
+    }
+
     .now {
-      color: #fa2209;
-      font-size: 20px;
+      color: #c21401;
+      font-size: 24px;
+      font-weight: 600;
+      margin-right: 10px;
     }
+
     .oldprice {
-      color: #959595;
-      font-size: 16px;
+      color: #999;
+      font-size: 14px;
       text-decoration: line-through;
-      margin-left: 5px;
     }
+
     .sellcount {
-      color: #959595;
-      font-size: 16px;
-      position: relative;
-      top: 4px;
+      color: #999;
+      font-size: 13px;
+      padding-top: 4px;
     }
   }
+
   .msg {
     font-size: 16px;
-    line-height: 24px;
-    margin-top: 5px;
+    line-height: 22px;
+    margin-bottom: 15px;
+    color: #333;
   }
+
   .service {
     display: flex;
     justify-content: space-between;
-    line-height: 40px;
-    margin-top: 10px;
-    font-size: 16px;
+    align-items: center;
+    padding: 12px;
     background-color: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+
     .left-words {
+      display: flex;
+      gap: 15px;
+
       span {
-        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        color: #666;
       }
+
       .van-icon {
         margin-right: 4px;
-        color: #fa2209;
+        color: #c21401;
+        font-size: 14px;
+      }
+    }
+
+    .right-icon {
+      .van-icon {
+        color: #999;
+        font-size: 16px;
       }
     }
   }
 
   .comment {
-    padding: 10px;
+    padding: 15px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
+
   .comment-title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+
     .right {
-      color: #959595;
+      color: #999;
+      font-size: 14px;
+      font-weight: normal;
+
+      .van-icon {
+        margin-left: 4px;
+        font-size: 12px;
+      }
     }
   }
 
-  .comment-item {
-    font-size: 16px;
-    line-height: 30px;
-    .top {
-      height: 30px;
-      display: flex;
-      align-items: center;
-      margin-top: 20px;
-      img {
-        width: 20px;
-        height: 20px;
+  .comment-list {
+    .comment-item {
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
       }
-      .name {
-        margin: 0 10px;
+
+      .top {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+
+        img {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+
+        .name {
+          font-size: 14px;
+          color: #666;
+          margin-right: 10px;
+        }
       }
-    }
-    .time {
-      color: #999;
+
+      .content {
+        font-size: 14px;
+        line-height: 20px;
+        color: #333;
+        margin-bottom: 8px;
+      }
+
+      .time {
+        font-size: 12px;
+        color: #999;
+      }
     }
   }
 
@@ -316,33 +399,67 @@ export default {
     width: 100%;
     height: 55px;
     background-color: #fff;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #f0f0f0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+
     .icon-home, .icon-cart {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 8px;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: #f5f5f5;
+        color: #c21401;
+      }
+
       .van-icon {
         font-size: 24px;
+        margin-bottom: 2px;
       }
     }
+
     .btn-add,
     .btn-buy {
-      height: 36px;
-      line-height: 36px;
-      width: 120px;
-      border-radius: 18px;
-      background-color: #ffa900;
+      height: 38px;
+      line-height: 38px;
+      padding: 0 20px;
+      border-radius: 20px;
       text-align: center;
       color: #fff;
       font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
     }
+
+    .btn-add {
+      background-color: #ffa900;
+      margin-right: 10px;
+    }
+
     .btn-buy {
-      background-color: #fe5630;
+      background-color: #c21401;
     }
   }
 }
@@ -353,25 +470,45 @@ export default {
 
 // 弹层的样式
 .product {
+  padding: 15px;
+
   .product-title {
     display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+
     .left {
+      margin-right: 15px;
+
       img {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+        background-color: #f5f5f5;
       }
-      margin: 10px;
     }
+
     .right {
       flex: 1;
-      padding: 10px;
+
       .price {
         font-size: 14px;
-        color: #fe560a;
+        color: #c21401;
+        margin-bottom: 8px;
+
         .nowprice {
-          font-size: 24px;
+          font-size: 26px;
+          font-weight: 600;
           margin: 0 5px;
         }
+      }
+
+      .count {
+        font-size: 13px;
+        color: #999;
       }
     }
   }
@@ -379,41 +516,82 @@ export default {
   .num-box {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 15px 0;
     align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+
+    span:first-child {
+      font-size: 15px;
+      font-weight: 500;
+      color: #333;
+    }
+  }
+
+  .showbtn {
+    margin-top: 20px;
   }
 
   .btn, .btn-none {
-    height: 40px;
-    line-height: 40px;
-    margin: 20px;
-    border-radius: 20px;
+    height: 44px;
+    line-height: 44px;
+    margin: 25px 0 10px;
+    border-radius: 22px;
     text-align: center;
-    color: rgb(255, 255, 255);
-    background-color: rgb(255, 148, 2);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
+
+  .btn {
+    background-color: #ffa900;
+
+    &:hover {
+      background-color: #ff9500;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 169, 0, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
   .btn.now {
-    background-color: #fe5630;
+    background-color: #c21401;
+
+    &:hover {
+      background-color: #a81201;
+      box-shadow: 0 4px 12px rgba(194, 20, 1, 0.3);
+    }
   }
+
   .btn-none {
     background-color: #cccccc;
+    cursor: not-allowed;
   }
 }
 
 .footer .icon-cart {
   position: relative;
-  padding: 0 6px;
+
   .num {
     z-index: 999;
     position: absolute;
-    top: -2px;
-    right: 0;
-    min-width: 16px;
+    top: 2px;
+    right: 2px;
+    min-width: 18px;
+    height: 18px;
+    line-height: 18px;
     padding: 0 4px;
     color: #fff;
     text-align: center;
-    background-color: #ee0a24;
-    border-radius: 50%;
+    background-color: #c21401;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 }
 </style>

@@ -142,22 +142,33 @@ export default {
 <style lang="less" scoped>
 .user {
   min-height: 100vh;
-  background-color: #f7f7f7;
+  background-color: #f5f5f5;
   padding-bottom: 50px;
 }
 
 .head-page {
-  height: 130px;
-  background: url("http://cba.itlike.com/public/mweb/static/background/user-header2.png");
-  background-size: cover;
+  height: 140px;
+  background: linear-gradient(135deg, #c21401 0%, #ff4b2b 100%);
   display: flex;
   align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 4px 12px rgba(194, 20, 1, 0.2);
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #a81201 0%, #ff381a 100%);
+  }
+
   .head-img {
-    width: 50px;
-    height: 50px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 10px;
+    margin-right: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
     img {
       width: 100%;
       height: 100%;
@@ -165,24 +176,37 @@ export default {
     }
   }
 }
+
 .info {
   .mobile {
-    margin-bottom: 5px;
-    color: #c59a46;
+    margin-bottom: 8px;
+    color: #fff;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
+
   .vip {
-    display: inline-block;
-    background-color: #3c3c3c;
-    padding: 3px 5px;
-    border-radius: 5px;
-    color: #e0d3b6;
-    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: #ffd700;
+    font-size: 13px;
+    backdrop-filter: blur(5px);
+
     .van-icon {
-      font-weight: bold;
-      color: #ffb632;
+      margin-right: 4px;
+      font-size: 14px;
+      color: #ffd700;
     }
+  }
+
+  .words {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -191,32 +215,69 @@ export default {
   padding: 20px 0;
   font-size: 14px;
   background-color: #fff;
+  margin: 15px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+
   .asset-left {
     display: flex;
     justify-content: space-evenly;
     flex: 3;
+    border-right: 1px solid #f0f0f0;
+
     .asset-left-item {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 0 15px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+
       span:first-child {
-        margin-bottom: 5px;
-        color: #ff0000;
-        font-size: 16px;
+        margin-bottom: 6px;
+        color: #c21401;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      span:last-child {
+        color: #666;
+        font-size: 13px;
       }
     }
   }
+
   .asset-right {
     flex: 1;
+
     .asset-right-item {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 100%;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #fafafa;
+        color: #c21401;
+      }
+
       .van-icon {
-        font-size: 24px;
-        margin-bottom: 5px;
+        font-size: 26px;
+        margin-bottom: 6px;
+        transition: all 0.3s ease;
+      }
+
+      &:hover .van-icon {
+        transform: scale(1.1);
       }
     }
   }
@@ -224,20 +285,49 @@ export default {
 
 .order-navbar {
   display: flex;
-  padding: 15px 0;
-  margin: 10px;
+  padding: 20px 0;
+  margin: 0 10px 15px;
   font-size: 14px;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
   .order-navbar-item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 25%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px 0;
+    border-radius: 8px;
+
+    &:hover {
+      background-color: rgba(194, 20, 1, 0.05);
+      transform: translateY(-2px);
+    }
+
     .van-icon {
-      font-size: 24px;
-      margin-bottom: 5px;
+      font-size: 28px;
+      margin-bottom: 8px;
+      color: #c21401;
+      transition: all 0.3s ease;
+    }
+
+    span {
+      color: #333;
+      font-size: 13px;
+      transition: color 0.3s ease;
+    }
+
+    &:hover .van-icon {
+      transform: scale(1.1);
+    }
+
+    &:hover span {
+      color: #c21401;
+      font-weight: 500;
     }
   }
 }
@@ -245,33 +335,64 @@ export default {
 .service {
   font-size: 14px;
   background-color: #fff;
-  border-radius: 5px;
-  margin: 10px;
+  border-radius: 10px;
+  margin: 0 10px 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+
   .title {
     height: 50px;
     line-height: 50px;
-    padding: 0 15px;
+    padding: 0 20px;
     font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
   }
+
   .content {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    font-size: 14px;
-    background-color: #fff;
-    border-radius: 5px;
+    padding: 10px 0;
+
     .content-item {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       width: 25%;
-      margin-bottom: 20px;
+      padding: 15px 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      margin-bottom: 0;
+
+      &:hover {
+        background-color: rgba(194, 20, 1, 0.05);
+        transform: translateY(-3px);
+      }
 
       .van-icon {
-        font-size: 24px;
-        margin-bottom: 5px;
-        color: #ff3800;
+        font-size: 28px;
+        margin-bottom: 8px;
+        color: #c21401;
+        transition: all 0.3s ease;
+      }
+
+      span {
+        color: #333;
+        font-size: 13px;
+        transition: color 0.3s ease;
+      }
+
+      &:hover .van-icon {
+        transform: scale(1.1);
+      }
+
+      &:hover span {
+        color: #c21401;
+        font-weight: 500;
       }
     }
   }
@@ -279,16 +400,30 @@ export default {
 
 .logout-btn {
   button {
-    width: 60%;
-    margin: 10px auto;
+    width: calc(100% - 20px);
+    margin: 20px auto 0;
     display: block;
-    font-size: 13px;
-    color: #616161;
-    border-radius: 9px;
+    font-size: 15px;
+    color: #666;
+    border-radius: 25px;
     border: 1px solid #dcdcdc;
-    padding: 7px 0;
+    padding: 12px 0;
     text-align: center;
-    background-color: #fafafa;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      background-color: #f5f5f5;
+      border-color: #c21401;
+      color: #c21401;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
   }
 }
 </style>

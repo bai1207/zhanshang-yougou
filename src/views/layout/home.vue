@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- 导航条 -->
-    <van-nav-bar title="智慧商城" fixed />
+    <van-nav-bar title="掌上优购商城" fixed />
 
     <!-- 搜索框 -->
     <van-search
@@ -75,53 +75,130 @@ export default {
 .home {
   padding-top: 100px;
   padding-bottom: 50px;
+  background-color: #f8f8f8;
 }
 
 // 导航条样式定制
 .van-nav-bar {
   z-index: 999;
   background-color: #c21401;
+  box-shadow: 0 2px 8px rgba(194, 20, 1, 0.2);
   ::v-deep .van-nav-bar__title {
     color: #fff;
+    font-size: 18px;
+    font-weight: 600;
   }
 }
 
 // 搜索框样式定制
 .van-search {
   position: fixed;
-  width: 100%;
-  top: 46px;
+  width: 92%;
+  left: 4%;
+  top: 56px;
   z-index: 999;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  ::v-deep .van-field__control {
+    font-size: 14px;
+  }
 }
 
-// 分类导航部分
-.my-swipe .van-swipe-item {
-  height: 185px;
-  color: #fff;
-  font-size: 20px;
-  text-align: center;
-  background-color: #39a9ed;
+// 轮播图部分
+.my-swipe {
+  margin: 0 16px;
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  .van-swipe-item {
+    height: 185px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    background-color: #39a9ed;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
-.my-swipe .van-swipe-item img {
-  width: 100%;
-  height: 185px;
+
+// 导航网格部分
+.van-grid {
+  margin: 16px 0;
+  padding: 0 8px;
+  background-color: #fff;
+  .van-grid-item {
+    padding: 12px 0;
+    ::v-deep .van-grid-item__content {
+      padding: 0;
+    }
+    ::v-deep .van-grid-item__icon {
+      margin-bottom: 8px;
+    }
+    ::v-deep .van-grid-item__text {
+      font-size: 12px;
+      color: #333;
+      font-weight: 500;
+    }
+  }
 }
 
 // 主会场
-.main img {
-  display: block;
-  width: 100%;
+.main {
+  padding: 0 16px;
+  margin-bottom: 16px;
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
 }
 
 // 猜你喜欢
-.guess .guess-title {
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-}
+.guess {
+  background-color: #fff;
+  padding-bottom: 16px;
+  .guess-title {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 80px;
+      height: 1px;
+      background-color: #e0e0e0;
+    }
+    &::before {
+      left: 50px;
+    }
+    &::after {
+      right: 50px;
+    }
+  }
 
-// 商品样式
-.goods-list {
-  background-color: #f6f6f6;
+  // 商品样式
+  .goods-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 8px;
+    gap: 12px;
+    background-color: #fff;
+  }
 }
 </style>
