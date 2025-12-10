@@ -123,7 +123,7 @@ export default {
     async getUserInfoDetail () {
       const { data: { userInfo } } = await getUserInfoDetail()
       this.detail = userInfo
-      console.log(this.detail)
+      // console.log(this.detail)
     },
     logout () {
       // 退出登录要添加确认提示

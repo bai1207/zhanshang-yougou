@@ -109,12 +109,12 @@ export default {
         return
       }
 
-      console.log('发送登录请求')
+      // console.log('发送登录请求')
 
       // 发送请求
       const res = await codeLogin(this.mobile, this.msgCode)
       this.$store.commit('user/setUserInfo', res.data)
-      console.log(res)
+      // console.log(res)
       this.$toast('登录成功')
 
       // 进行判断，看地址栏有无回跳地址
