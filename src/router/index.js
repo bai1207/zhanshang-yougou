@@ -18,6 +18,7 @@ import store from '@/store'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
+  mode: 'history',
   routes: [
     { path: '/login', component: Login },
     {
